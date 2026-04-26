@@ -10,7 +10,7 @@ Steps you can follow after cloning this template:
 nix flake update den
 ```
 
-- Edit [modules/den.nix](modules/den.nix)
+- Edit [modules/hosts.nix](modules/hosts.nix)
 
 - Build
 
@@ -20,4 +20,14 @@ nix run .#igloo
 
 # pass any other nh action
 nix run .#igloo -- switch
+```
+
+- Run the VM
+
+We recommend to use a VM develop cycle so you can play with the system before applying to your hardware.
+
+See [modules/vm.nix](modules/vm.nix)
+
+```console
+nix run .#vm
 ```
