@@ -6,6 +6,7 @@
       den.provides.define-user
       den.provides.primary-user
       (den.provides.user-shell "fish")
+      den.aspects.git.provides.user-config
     ];
 
     homeManager = { pkgs, ... }: {
