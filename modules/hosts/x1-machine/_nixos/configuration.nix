@@ -1,20 +1,7 @@
-{ pkgs, config, ... }: 
-{
-  environment.systemPackages = [  
-    pkgs.hello  
-    pkgs.git  
-  ];  
-    
-  preferences.user.name = "sam";  
-  users.users = {  
-    "${config.preferences.user.name}" = {  
-      isNormalUser = true;  
-      description = "${config.preferences.user.name}, he is the primary user";  
-      extraGroups = [ "networkmanager" "wheel" "video" ];  
-      initialPassword = "password";  
-    };  
-  };  
-    
+{ pkgs, config, lib, ... }: {
+  imports = [
+    ./hardware.nix
+  ];
   networking.hostName = "x1-machine";  
   networking.networkmanager.enable = true;  
   time.timeZone = "Australia/Sydney";  
