@@ -1,17 +1,18 @@
 {
   # host aspect
-  den.aspects.igloo = {
+  den.aspects.x1-machine = {
     # host NixOS configuration
     nixos =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = [ pkgs.hello ];
+      { pkgs, ... }: {
+        environment.systemPackages = [ 
+	  pkgs.hello
+	  pkgs.git
+	];
       };
 
     # host provides default home environment for its users
     provides.to-users.homeManager =
-      { pkgs, ... }:
-      {
+      { pkgs, ... }: {
         home.packages = [ pkgs.vim ];
       };
   };

@@ -5,7 +5,7 @@
 {
 
   # USER TODO: remove this tty-autologin used for the VM
-  den.aspects.igloo.includes = [ (den.provides.tty-autologin "tux") ];
+  den.aspects.x1-machine.includes = [ (den.provides.tty-autologin "sam") ];
 
   perSystem =
     { pkgs, ... }:
